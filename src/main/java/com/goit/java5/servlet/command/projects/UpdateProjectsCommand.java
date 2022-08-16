@@ -20,7 +20,7 @@ public class UpdateProjectsCommand implements Command {
 		projects.setCreation_Date(LocalDate.parse(req.getParameter("updateCreation_Date")));
 		projects.setDescription(req.getParameter("updateDescription"));
 
-		new RequestsForProjects().updateProjects(projects.getId(), projects);
+		new RequestsForProjects().updateProjects(projects);
 
 		resp.sendRedirect("/hw7Hibernate/projects");
 	}

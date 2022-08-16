@@ -17,11 +17,11 @@ public class GetProjectsCommand implements Command {
 		resp.setContentType("text/html");
 		Context context = new Context(
 				req.getLocale(),
-				Map.of("requestsForProjects", new RequestsForProjects().getAllProjects())
+				Map.of("requestsForProjects", new RequestsForProjects().listAllProjects())
 		);
 
 		IndexPageServlet.getEngine().process("projects", context, resp.getWriter());
 		resp.getWriter().close();
 	}
-	}
+}
 

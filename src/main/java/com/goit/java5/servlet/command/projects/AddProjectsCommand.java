@@ -19,7 +19,7 @@ public class AddProjectsCommand implements Command {
 		projects.setCreation_Date(LocalDate.parse(req.getParameter("creation_Date")));
 		projects.setDescription(req.getParameter("description"));
 
-		new RequestsForProjects().createProjects(projects.getProjects_name(), projects.getCost(), projects.getCreation_Date(),projects.getDescription());
+		new RequestsForProjects().createProjects(projects);
 
 		resp.sendRedirect("/hw7Hibernate/projects");
 	}

@@ -20,7 +20,7 @@ public class GetCustomersCommand implements Command {
 				req.getLocale(),
 				Map.of(
 						"requestsForCustomers",
-						new RequestsForCustomers().getAllCustomers())
+						new RequestsForCustomers().selectAllCustomers())
 		);
 
 		IndexPageServlet.getEngine().process("customers", context, resp.getWriter());

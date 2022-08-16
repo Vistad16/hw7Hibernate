@@ -17,7 +17,7 @@ public class UpdateCustomersCommand implements Command {
 		customers.setName(req.getParameter("updateName"));
 		customers.setCountry(req.getParameter("updateCountry"));
 
-		new RequestsForCustomers().updateSkills(customers.getId(), customers);
+		new RequestsForCustomers().updateCustomers(customers);
 
 		resp.sendRedirect("/hw7Hibernate/customers");
 	}

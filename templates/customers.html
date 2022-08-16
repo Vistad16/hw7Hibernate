@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="UTF-8">
+	<title>Customers</title>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+		  integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+</head>
+<body>
+<h1 align="center">Customers</h1>
+<div class="companies" align="center">
+	<a type="button" class="btn btn-primary" href="/hw7Hibernate/index">Main menu</a>
+</div>
+
+<div class="container">
+	<div class="row">
+		<div class="col">
+			<ul class="list-group list-group-flush">
+				<li class="list-group-item list-group-item-secondary" th:each="requestsForCustomer: ${requestsForCustomers}">
+					<span th:text="${requestsForCustomer}"></span>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col">
+			<form action="/hw7Hibernate/customers/add" method="POST">
+				<div class="form-group">
+					<label for="name">Add Name</label>
+					<input type="text" name="name" class="form-control" id="name" placeholder="Enter name">
+				</div>
+				<div class="form-group">
+					<label for="country">Add Country</label>
+					<input type="text" name="country" class="form-control" id="country"
+						   placeholder="Enter country">
+				</div>
+				<button type="submit" class="btn btn-primary">Add Customer</button>
+			</form>
+		</div>
+		<div class="col">
+			<form action="/hw7Hibernate/customers/update" method="POST">
+				<div class="form-group">
+					<label for="updateId">Update Customers</label>
+					<input type="text" name="updateId" class="form-control" id="updateId" placeholder="Enter ID">
+				</div>
+				<div class="form-group">
+					<label for="updateName">Update Name</label>
+					<input type="text" name="updateName" class="form-control" id="updateName"
+						   placeholder="Enter name">
+				</div>
+				<div class="form-group">
+					<label for="updateCountry">Update Country</label>
+					<input type="text" name="updateCountry" class="form-control" id="updateCountry"
+						   placeholder="Enter country">
+				</div>
+				<button type="submit" class="btn btn-primary">Update Customer</button>
+			</form>
+		</div>
+		<div class="col">
+			<form action="/hw7Hibernate/customers/delete" method="post">
+				<div class="form-group">
+					<label for="deleteCustomer">Delete Customer</label>
+					<input type="text" class="form-control" name="deleteCustomer" id="deleteCustomer" placeholder="Enter ID">
+				</div>
+				<button type="submit" class="btn btn-primary">Delete Customer</button>
+			</form>
+		</div>
+	</div>
+</div>
+</body>
+</html>

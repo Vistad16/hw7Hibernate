@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="UTF-8">
+	<title>Developers</title>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+		  integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+</head>
+<body>
+<h1 align="center">Developers</h1>
+<div class="companies" align="center">
+	<a type="button" class="btn btn-primary" href="/hw7Hibernate/index">Main menu</a>
+</div>
+
+<div class="container">
+	<div class="row">
+		<div class="col">
+			<ul class="list-group list-group-flush">
+				<li class="list-group-item list-group-item-secondary"
+					th:each="requestsForDeveloper: ${requestsForDevelopers}">
+					<span th:text="${requestsForDeveloper}"></span>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col">
+			<form action="/hw7Hibernate/developers/add" method="POST">
+				<div class="form-group">
+					<label for="company_id">Company ID</label>
+					<input type="text" name="company_id" class="form-control" id="company_id" placeholder="Enter company ID">
+				</div>
+				<div class="form-group">
+					<label for="name">Add Developer</label>
+					<input type="text" name="name" class="form-control" id="name" placeholder="Enter name">
+				</div>
+				<div class="form-group">
+					<label for="age">Age</label>
+					<input type="text" name="age" class="form-control" id="age" placeholder="Enter age">
+				</div>
+				<div class="form-group">
+					<label for="sex">Sex</label>
+					<input type="text" name="sex" class="form-control" id="sex" placeholder="Enter sex">
+				</div>
+				<div class="form-group">
+					<label for="salary">Salary</label>
+					<input type="text" name="salary" class="form-control" id="salary" placeholder="Enter salary">
+				</div>
+				<button type="submit" class="btn btn-primary">Add Companies</button>
+			</form>
+		</div>
+		<div class="col">
+			<form action="/hw7Hibernate/developers/update" method="POST">
+				<div class="form-group">
+					<label for="updateName">Update Developer</label>
+					<input type="text" name="updateId" class="form-control" id="updateId" placeholder="Enter ID">
+				</div>
+				<div class="form-group">
+					<label for="updateCompany_id">Company ID</label>
+					<input type="text" name="updateCompany_id" class="form-control" id="updateCompany_id" placeholder="Enter company ID">
+				</div>
+				<div class="form-group">
+					<label for="updateName">Name</label>
+					<input type="text" name="updateName" class="form-control" id="updateName" placeholder="Enter name">
+				</div>
+				<div class="form-group">
+					<label for="updateAge">Age</label>
+					<input type="text" name="updateAge" class="form-control" id="updateAge" placeholder="Enter age">
+				</div>
+				<div class="form-group">
+					<label for="updateSex">Sex</label>
+					<input type="text" name="updateSex" class="form-control" id="updateSex" placeholder="Enter sex">
+				</div>
+				<div class="form-group">
+					<label for="updateSalary">Salary</label>
+					<input type="text" name="updateSalary" class="form-control" id="updateSalary"
+						   placeholder="Enter salary">
+				</div>
+				<button type="submit" class="btn btn-primary">Add Developer</button>
+			</form>
+		</div>
+		<div class="col">
+			<form action="/hw7Hibernate/developers/delete" method="post">
+				<div class="form-group">
+					<label for="deleteDevelopers">Delete Developer</label>
+					<input type="text" class="form-control" name="deleteDevelopers" id="deleteDevelopers"
+						   placeholder="Enter ID">
+				</div>
+				<button type="submit" class="btn btn-primary">Delete Developer</button>
+			</form>
+		</div>
+	</div>
+</div>
+</body>
+</html>

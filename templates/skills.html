@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Skills</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+</head>
+<body>
+<h1 align="center">Skills</h1>
+<div class="companies" align="center">
+    <a type="button" class="btn btn-primary" href="/hw7Hibernate/index">Main menu</a>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item list-group-item-secondary" th:each="requestsForSkill: ${requestsForSkills}">
+                    <span th:text="${requestsForSkill}"></span>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <form action="/hw7Hibernate/skills/add" method="POST">
+                <div class="form-group">
+                    <label for="programming_language">Add Programming Language</label>
+                    <input type="text" name="programming_language" class="form-control" id="programming_language" placeholder="Enter programming language">
+                </div>
+                <div class="form-group">
+                    <label for="skill_level"> Skill Level</label>
+                    <input type="text" name="skill_level" class="form-control" id="skill_level"
+                           placeholder="Enter skill Level">
+                </div>
+                <button type="submit" class="btn btn-primary">Add Skill</button>
+            </form>
+        </div>
+        <div class="col">
+            <form action="/hw7Hibernate/skills/update" method="POST">
+                <div class="form-group">
+                    <label for="updateId">Update Skill</label>
+                    <input type="text" name="updateId" class="form-control" id="updateId" placeholder="Enter ID">
+                </div>
+                <div class="form-group">
+                    <label for="updateProgramming_language">Update Programming Language</label>
+                    <input type="text" name="updateProgramming_language" class="form-control" id="updateProgramming_language"
+                           placeholder="Enter programming language">
+                </div>
+                <div class="form-group">
+                    <label for="updateSkill_level">Update Skill Level</label>
+                    <input type="text" name="updateSkill_level" class="form-control" id="updateSkill_level"
+                           placeholder="Enter Skill Level">
+                </div>
+                <button type="submit" class="btn btn-primary">Update Skill</button>
+            </form>
+        </div>
+        <div class="col">
+            <form action="/hw7Hibernate/skills/delete" method="post">
+                <div class="form-group">
+                    <label for="deleteSkill">Delete Skill</label>
+                    <input type="text" class="form-control" name="deleteSkill" id="deleteSkill" placeholder="Enter ID">
+                </div>
+
+                <button type="submit" class="btn btn-primary">Delete Skill</button>
+            </form>
+        </div>
+    </div>
+</div>
+</body>
+</html>

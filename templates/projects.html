@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Projects</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+</head>
+<body>
+<h1 align="center">Projects</h1>
+<div class="companies" align="center">
+    <a type="button" class="btn btn-primary" href="/hw7Hibernate/index">Main menu</a>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item list-group-item-secondary"
+                    th:each="requestsForProject: ${requestsForProjects}">
+                    <span th:text="${requestsForProject}"></span>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <form action="/hw7Hibernate/projects/add" method="POST">
+                <div class="form-group">
+                    <label for="projects_name">Add Projects</label>
+                    <input type="text" name="projects_name" class="form-control" id="projects_name"
+                           placeholder="Enter project name">
+                </div>
+                <div class="form-group">
+                    <label for="cost">Add Cost</label>
+                    <input type="text" name="cost" class="form-control" id="cost"
+                           placeholder="Enter cost">
+                </div>
+                <div class="form-group">
+                    <label for="creation_Date">Creation Date</label>
+                    <input type="text" name="creation_Date" class="form-control" id="creation_Date"
+                           placeholder="YYYY-MM-DD">
+                </div>
+                <div class="form-group">
+                    <label for="description">Project Description</label>
+                    <input type="text" name="description" class="form-control" id="description"
+                           placeholder="Enter project description">
+                </div>
+                <button type="submit" class="btn btn-primary">Add Project</button>
+            </form>
+        </div>
+        <div class="col">
+            <form action="/hw7Hibernate/projects/update" method="POST">
+                <div class="form-group">
+                    <label for="updateId">Update Projects</label>
+                    <input type="text" name="updateId" class="form-control" id="updateId" placeholder="Enter ID">
+                </div>
+                <div class="form-group">
+                    <label for="updateProjects_name">Project Name</label>
+                    <input type="text" name="updateProjects_name" class="form-control" id="updateProjects_name"
+                           placeholder="Enter project name">
+                </div>
+                <div class="form-group">
+                    <label for="updateCost">Update Cost</label>
+                    <input type="text" name="updateCost" class="form-control" id="updateCost" placeholder="Enter cost">
+                </div>
+                <div class="form-group">
+                    <label for="updateCreation_Date">Date Creation</label>
+                    <input type="text" name="updateCreation_Date" class="form-control" id="updateCreation_Date"
+                           placeholder="YYYY-MM-DD">
+                </div>
+                <div class="form-group">
+                    <label for="updateDescription">Project Description</label>
+                    <input type="text" name="updateDescription" class="form-control"
+                           id="updateDescription" placeholder="Enter project description">
+                </div>
+                <button type="submit" class="btn btn-primary">Update Project</button>
+            </form>
+        </div>
+        <div class="col">
+            <form action="/hw7Hibernate/projects/delete" method="post">
+                <div class="form-group">
+                    <label for="deleteProject">Delete Project</label>
+                    <input type="text" class="form-control" name="deleteProject" id="deleteProject"
+                           placeholder="Enter ID">
+                </div>
+
+                <button type="submit" class="btn btn-primary">Delete Project</button>
+            </form>
+        </div>
+    </div>
+</div>
+</body>
+</html>

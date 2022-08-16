@@ -15,7 +15,11 @@ public class DatabaseInitService {
 
 			Flyway flyway = Flyway
 					.configure()
-					.dataSource(property.getProperty("hibernate.connection.url"), property.getProperty("hibernate.connection.username"), property.getProperty("hibernate.connection.password"))
+					.dataSource(
+							property.getProperty("hibernate.connection.url"),
+							property.getProperty("hibernate.connection.username"),
+							property.getProperty("hibernate.connection.password")
+					)
 					.load();
 
 			flyway.migrate();

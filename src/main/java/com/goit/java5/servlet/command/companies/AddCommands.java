@@ -5,6 +5,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.sql.SQLException;
 
+import com.goit.java5.data.entity.Companies;
 import com.goit.java5.data.queries.RequestsForCompanies;
 import com.goit.java5.servlet.command.Command;
 
@@ -14,7 +15,7 @@ public class AddCommands implements Command {
 		String company_name = req.getParameter("company_name");
 		String specialization = req.getParameter("specialization");
 
-		new RequestsForCompanies().createCompanies(company_name, specialization);
+		new RequestsForCompanies().createCompanies(new Companies(company_name, specialization));
 
 		resp.sendRedirect("/hw7Hibernate/companies");
 	}

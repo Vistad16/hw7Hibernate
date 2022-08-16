@@ -16,7 +16,12 @@ public class UpdateCommand implements Command {
 		String updateCompany_name = req.getParameter("updateCompany_name");
 		String updateSpecialization = req.getParameter("updateSpecialization");
 
-		new RequestsForCompanies().updateCompanies(Integer.parseInt(id), new Companies(updateCompany_name, updateSpecialization));
+		Companies companies = new Companies();
+		companies.setId(Integer.parseInt(id));
+		companies.setCompany_name(updateCompany_name);
+		companies.setSpecialization(updateSpecialization);
+
+		new RequestsForCompanies().updateCompanies(companies);
 
 		resp.sendRedirect("/hw7Hibernate/companies");
 	}

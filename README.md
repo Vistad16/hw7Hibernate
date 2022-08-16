@@ -1,6 +1,10 @@
-# DataBase
-use MySQL
-# Pref
+# Used for work
+## Web server
+Tomcat 9.0
+## DataBase
+MySQL
+## Settings
+## Pref
 In "/hw7Hibernate/src/main/resources/hibernate.properties"
-# Path
-To templates "com.goit.java5.servlet.IndexPageServlet.java"
+## An example of an address
+http://localhost:8080/hw7Hibernate/index

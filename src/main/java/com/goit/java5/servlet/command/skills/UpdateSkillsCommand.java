@@ -17,7 +17,7 @@ public class UpdateSkillsCommand implements Command {
 		skills.setProgramming_language(req.getParameter("updateProgramming_language"));
 		skills.setSkill_level(req.getParameter("updateSkill_level"));
 
-		new RequestsForSkills().updateSkills(skills.getId(), skills);
+		new RequestsForSkills().updateSkills(skills);
 
 		resp.sendRedirect("/hw7Hibernate/skills");
 	}

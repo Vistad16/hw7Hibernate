@@ -20,7 +20,7 @@ public class GetSkillsCommand implements Command {
 				req.getLocale(),
 				Map.of(
 						"requestsForSkills",
-						new RequestsForSkills().getAllSkills())
+						new RequestsForSkills().listAllSkills())
 		);
 
 		IndexPageServlet.getEngine().process("skills", context, resp.getWriter());

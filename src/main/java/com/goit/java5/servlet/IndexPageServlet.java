@@ -6,7 +6,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-import com.goit.java5.connection.Storage;
 import com.goit.java5.servlet.command.CommandService;
 import org.thymeleaf.TemplateEngine;
 import org.thymeleaf.context.Context;
@@ -39,7 +38,6 @@ public class IndexPageServlet extends HttpServlet {
 		engine.addTemplateResolver(resolver);
 
 		commandService = new CommandService();
-		Storage.getInstance();
 	}
 
 	@Override

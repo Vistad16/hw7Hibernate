@@ -1,6 +1,6 @@
 # DataBase
 use MySQL
 # Pref
-In "com.goit.java5.connection.Prefs.java"
+In "/hw7Hibernate/src/main/resources/hibernate.properties"
 # Path
 To templates "com.goit.java5.servlet.IndexPageServlet.java"

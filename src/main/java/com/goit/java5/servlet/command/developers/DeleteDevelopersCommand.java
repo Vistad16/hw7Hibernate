@@ -14,7 +14,7 @@ public class DeleteDevelopersCommand implements Command {
 	public void process(HttpServletRequest req, HttpServletResponse resp) throws IOException, SQLException {
 		String id = req.getParameter("deleteDevelopers");
 
-		new RequestsForDeveloper().deleteById(Integer.parseInt(id));
+		new RequestsForDeveloper().deleteDeveloperById(Integer.parseInt(id));
 
 		resp.sendRedirect("/hw7Hibernate/developers");
 	}

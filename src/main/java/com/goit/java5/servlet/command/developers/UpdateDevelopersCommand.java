@@ -20,7 +20,7 @@ public class UpdateDevelopersCommand implements Command {
 		developer.setSex(Developer.Sex.valueOf(req.getParameter("updateSex")));
 		developer.setSalary(Integer.parseInt(req.getParameter("updateSalary")));
 
-		new RequestsForDeveloper().updateDevelopersById(developer);
+		new RequestsForDeveloper().updateDeveloper(developer);
 
 		resp.sendRedirect("/hw7Hibernate/developers");
 	}

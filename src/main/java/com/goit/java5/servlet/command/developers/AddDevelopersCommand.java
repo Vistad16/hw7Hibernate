@@ -21,6 +21,6 @@ public class AddDevelopersCommand implements Command {
 
 		new RequestsForDeveloper().createDeveloper(developer);
 
-		resp.sendRedirect("hw7Hibernate/developers");
+		resp.sendRedirect("/hw7Hibernate/developers");
 	}
 }

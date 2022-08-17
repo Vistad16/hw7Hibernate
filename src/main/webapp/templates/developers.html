@@ -45,6 +45,27 @@
 					<label for="salary">Salary</label>
 					<input type="text" name="salary" class="form-control" id="salary" placeholder="Enter salary">
 				</div>
+<!---->
+				<div class="form-group">
+					<label for="skills">Skills</label>
+					<select class="form-control" id="skills" name="skills" th:field="*{skills}">
+						<option selected>Select Skills</option>
+						<option th:each="requestsForSkill: ${requestsForSkills}"
+								th:value="${requestsForSkill.id}"
+								th:text="${requestsForSkill.programming_language + ' ' + requestsForSkill.skill_level}">
+
+						</option>
+					</select>
+				</div>
+				<div class="form-group">
+					<label for="projects">Projects</label>
+					<select class="form-select" aria-label="Default select example" id="projects" name="projects" th:field="*{projects}">
+						<option selected>Select Projects</option>
+						<option th:each="requestsForProject: ${requestsForProjects}" th:value="${requestsForProject.id}"
+								th:text="${requestsForProject.projects_name}"></option>
+					</select>
+				</div>
+<!--				-->
 				<button type="submit" class="btn btn-primary">Add Developer</button>
 			</form>
 		</div>
@@ -75,6 +96,24 @@
 					<input type="text" name="updateSalary" class="form-control" id="updateSalary"
 						   placeholder="Enter salary">
 				</div>
+<!--				-->
+				<div class="form-group">
+					<label for="updateSkills">Skills</label>
+					<select class="form-select" aria-label="Default select example" id="updateSkills" name="updateSkills" th:field="*{skill}">
+						<option selected>Select Skills</option>
+						<option th:each="requestsForSkill: ${requestsForSkills}" th:value="${requestsForSkill.id}"
+								th:text="${requestsForSkill.programming_language + ' ' + requestsForSkill.skill_level}"></option>
+					</select>
+				</div>
+				<div class="form-group">
+					<label for="updateProjects">Projects</label>
+					<select class="form-select" aria-label="Default select example" id="updateProjects" name="updateProjects" th:field="*{projects}">
+						<option selected>Select Projects</option>
+						<option th:each="requestsForProject: ${requestsForProjects}" th:value="${requestsForProject.id}"
+								th:text="${requestsForProject.projects_name}"></option>
+					</select>
+				</div>
+<!--				-->
 				<button type="submit" class="btn btn-primary">Update Developer</button>
 			</form>
 		</div>

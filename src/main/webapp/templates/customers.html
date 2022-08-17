@@ -34,6 +34,16 @@
 					<input type="text" name="country" class="form-control" id="country"
 						   placeholder="Enter country">
 				</div>
+<!--				-->
+				<div class="form-group">
+					<label for="projects">Projects</label>
+					<select class="form-select" aria-label="Default select example" id="projects" name="projects" th:field="*{projects}">
+						<option selected>Select Projects</option>
+						<option th:each="requestsForProject: ${requestsForProjects}" th:value="${requestsForProject.id}"
+								th:text="${requestsForProject.projects_name}"></option>
+					</select>
+				</div>
+<!--				-->
 				<button type="submit" class="btn btn-primary">Add Customer</button>
 			</form>
 		</div>
@@ -53,6 +63,16 @@
 					<input type="text" name="updateCountry" class="form-control" id="updateCountry"
 						   placeholder="Enter country">
 				</div>
+<!--				-->
+				<div class="form-group">
+					<label for="updateProjects">Projects</label>
+					<select class="form-select" aria-label="Default select example" id="updateProjects" name="updateProjects" th:field="*{projects}">
+						<option selected>Select Projects</option>
+						<option th:each="requestsForProject: ${requestsForProjects}" th:value="${requestsForProject.id}"
+								th:text="${requestsForProject.projects_name}"></option>
+					</select>
+				</div>
+<!--				-->
 				<button type="submit" class="btn btn-primary">Update Customer</button>
 			</form>
 		</div>
